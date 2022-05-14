@@ -3,6 +3,7 @@ import logo from './logo.svg'
 import Start from './components/Start'
 import Game from './components/Game'
 import Battleship from './components/Battleship'
+import Yatzy from './components/Yatzy'
 import './App.css'
 import { BrowserRouter as Router, NavLink, Routes, Route, Navigate } from 'react-router-dom'
 
@@ -14,11 +15,13 @@ function App() {
                 <NavLink to=""> Startsida </NavLink>
                 <NavLink to="/game"> Luffarschack </NavLink>
                 <NavLink to="/battleship"> Sänka skepp </NavLink>
+                <NavLink to="/yatzy"> Yatzy </NavLink>
               </header>
               <main>
                     <Routes>
                         <Route path='/game' element={<Game />} />
                         <Route path='/battleship' element={<Battleship />} />
+                        <Route path='/yatzy' element={<Yatzy /> } />
                         <Route path='/' element={<Start />} />
                     </Routes>
               </main>
