@@ -1,11 +1,11 @@
-import Board from "./Board"
+import TicTacToeBoard from "./TicTacToeBoard"
 
 // = tictactoe
 const Game = () => {
     return (
         <div className="game">
             <div className="game-board">
-                <Board />
+                <TicTacToeBoard />
             </div>
             <div className="game-info">
                 <div> status </div>

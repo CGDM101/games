@@ -1,5 +1,4 @@
 import BattleshipBoard from "./BattleshipBoard"
-import Board from "./Board"
 
 const Battleship = () => {
     return (

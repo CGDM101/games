@@ -2,7 +2,7 @@ import { useState } from "react"
 import Square from "./Square"
 
 
-const Board = () => {
+const TicTacToeBoard = () => {
     const [nextPlayer, setNextPlayer] = useState('Next player: X')
     const [piece, setPiece] = useState({squares: Array(9).fill(null)}) // ?
 
@@ -50,4 +50,4 @@ const Board = () => {
     )
 }
 
-export default Board
+export default TicTacToeBoard
