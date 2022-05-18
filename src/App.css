@@ -1,5 +1,5 @@
 body {
-  font: 14px "Century Gothic", Futura, sans-serif;
+  font: 14px monospace;
   margin: 20px;
   background-color: darkgreen;
   color: #47d962;
@@ -33,12 +33,14 @@ ol, ul {
   margin-bottom: 10px;
 }
 
+/*gääer alla knappar med klassen square*/
 .square {
   background: darkgreen;
   border: 2px solid #47d962;
   float: left;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 15px;  /*14px*/ 
+  font-family: monospace;
+  font-weight: bold   ;
   line-height: 34px;
   height: 34px;
   margin-right: -1px;
@@ -67,6 +69,14 @@ ol, ul {
   margin-left: 20px;
 }
 
+/*behövs för att göra de vita knappar i yatsy gröna*/
+button {
+  width: 10vw;
+  background-color: darkgreen;
+  border: 2px solid #47d962;
+  color: #47d962;
+  font-family: monospace; 
+}
 
 
 /* .App {

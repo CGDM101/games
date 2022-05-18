@@ -8,12 +8,12 @@ const BattleshipBoard = () => {
     return (
         <div>
             <section className="your-board">
-                <p> YOU </p>
+                <p> YOUR BOARD</p>
                 <YouBoard /> 
             </section>
 
             <section className="enemy-board">
-                <p> ENEMY </p>
+                <p> ENEMY'S BOARD </p>
                 <EnemyBoard />
             </section>
         </div>

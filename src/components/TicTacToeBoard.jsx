@@ -11,7 +11,7 @@ const TicTacToeBoard = () => {
     // }TODO props i st på varje ruta
     function renderSquare(i) {
         return (
-            <Square value={i} /> // WIP
+            <Square value={i} /> // WIP. efter arrowfunct i dok
         )
     }
     // function render() {
