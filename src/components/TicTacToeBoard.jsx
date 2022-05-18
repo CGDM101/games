@@ -8,11 +8,11 @@ const TicTacToeBoard = () => {
 
     // function renderSquare(i) {
     //     return <Square />
-    // }TODO props i st på varje ruta
+    // }TODO props i st på varje ruta?
     function renderSquare(i) {
         return (
             <Square value={i} /> // WIP. efter arrowfunct i dok
-        )
+        ) // lift state up i dok
     }
     // function render() {
     //     const playerstatus = 'Next player: X'
@@ -23,28 +23,28 @@ const TicTacToeBoard = () => {
             <div className="status"> {nextPlayer} </div>
             <div className="board-row">
                 {/* <Square /> */}
-                {/* <Square value={1} />
-                <Square value={2} />
-                <Square value={3} /> */}
-                {renderSquare(0)}
+                <Square value={i} />
+                <Square value={i} />
+                <Square value={i} />
+                {/* {renderSquare(0)}
                 {renderSquare(1)}
-                {renderSquare(2)}
+                {renderSquare(2)} */}
             </div>
             <div className="board-row">
-                {renderSquare(3)}
+                {/* {renderSquare(3)}
                 {renderSquare(4)}
-                {renderSquare(5)}
-                {/* <Square value={4}/>
-                <Square value={5}/>
-                <Square value={6}/> */}
+                {renderSquare(5)} */}
+                <Square value={i}/>
+                <Square value={i}/>
+                <Square value={i}/>
             </div>
             <div className="board-row">
-                {renderSquare(6)}
+                {/* {renderSquare(6)}
                 {renderSquare(7)}
-                {renderSquare(8)}
-                {/* <Square value={7}/>
-                <Square value={8}/>
-                <Square value={9}/> */}
+                {renderSquare(8)} */}
+                <Square value={i}/>
+                <Square value={i}/>
+                <Square value={i}/>
             </div>
         </section>
     )
