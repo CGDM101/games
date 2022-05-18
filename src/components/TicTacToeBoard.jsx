@@ -23,28 +23,28 @@ const TicTacToeBoard = () => {
             <div className="status"> {nextPlayer} </div>
             <div className="board-row">
                 {/* <Square /> */}
+                {/* <Square value={i} />
                 <Square value={i} />
-                <Square value={i} />
-                <Square value={i} />
-                {/* {renderSquare(0)}
+                <Square value={i} /> */}
+                {renderSquare(0)}
                 {renderSquare(1)}
-                {renderSquare(2)} */}
+                {renderSquare(2)}
             </div>
             <div className="board-row">
-                {/* {renderSquare(3)}
+                {renderSquare(3)}
                 {renderSquare(4)}
-                {renderSquare(5)} */}
+                {renderSquare(5)}
+                {/* <Square value={i}/>
                 <Square value={i}/>
-                <Square value={i}/>
-                <Square value={i}/>
+                <Square value={i}/> */}
             </div>
             <div className="board-row">
-                {/* {renderSquare(6)}
+                {renderSquare(6)}
                 {renderSquare(7)}
-                {renderSquare(8)} */}
+                {renderSquare(8)}
+                {/* <Square value={i}/>
                 <Square value={i}/>
-                <Square value={i}/>
-                <Square value={i}/>
+                <Square value={i}/> */}
             </div>
         </section>
     )
