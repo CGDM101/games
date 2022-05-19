@@ -27,7 +27,34 @@ const Yatzy = () => {
         let sumFours = 0
         let sumFives = 0
         let sumSixes = 0
-// loopa igenom
+
+        for (let i = 0; i < dices.length; i++) {
+            if (dices[i] === 1) {
+                sumOnes += 1
+            } else sumOnes += 0 
+
+            if (dices[i] === 2) {
+                sumTwos += 1
+            } else sumTwos += 0 
+
+            if (dices[i] === 3) {
+                sumThrees += 1
+            } else sumThrees += 0 
+
+            if (dices[i] === 4) {
+                sumFours += 1
+            } else sumFours += 0 
+
+            if (dices[i] === 5) {
+                sumFives += 1
+            } else sumFives += 0 
+
+            if (dices[i] === 6) {
+                sumSixes += 1
+            } else sumFives += 0 
+
+        }
+
         setOnes(sumOnes)
         setTwos(sumTwos)
         setThrees(sumThrees)
@@ -35,82 +62,6 @@ const Yatzy = () => {
         setFives(sumFives)
         setSixes(sumSixes)
     }
-
-    function CalculateOnes() {
-        let dices = [dice1, dice2, dice3, dice4, dice5]
-        let sum = 0
-        for (let i = 0; i < dices.length; i++) {
-            if(dices[i] == 1) {
-                sum += 1
-            } else if (i != 1) {
-                sum += 0
-            }
-        }
-        setOnes(sum)
-    }
-
-    function CalculateTwos() {
-        let dices = [dice1, dice2, dice3, dice4, dice5]
-        let sum = 0
-        for (let i = 0; i < dices.length; i++) {
-            if(dices[i] == 2) {
-                sum += 1
-            } else if (i != 2) {
-                sum += 0
-            }
-        }
-        setTwos(sum)
-    }
-    function CalculateThrees() {
-        let dices = [dice1, dice2, dice3, dice4, dice5]
-        let sum = 0
-        for (let i = 0; i < dices.length; i++) {
-            if(dices[i] == 3) {
-                sum += 1
-            } else if (i != 3) {
-                sum += 0
-            }
-        }
-        setThrees(sum)
-    }
-    function CalculateFours() {
-        let dices = [dice1, dice2, dice3, dice4, dice5]
-        let sum = 0
-        for (let i = 0; i < dices.length; i++) {
-            if(dices[i] == 4) {
-                sum += 1
-            } else if (i != 4) {
-                sum += 0
-            }
-        }
-        setFours(sum)
-    }
-    function CalculateFives() {
-        let dices = [dice1, dice2, dice3, dice4, dice5]
-        let sum = 0
-        for (let i = 0; i < dices.length; i++) {
-            if(dices[i] == 5) {
-                sum += 1
-            } else if (i != 5) {
-                sum += 0
-            }
-        }
-        setFives(sum)
-    }
-    function CalculateSixes() {
-        let dices = [dice1, dice2, dice3, dice4, dice5]
-        let sum = 0
-        for (let i = 0; i < dices.length; i++) {
-            if(dices[i] == 6) {
-                sum += 1
-            } else if (i != 6) {
-                sum += 0
-            }
-        }
-        setSixes(sum)
-    }
-
-
 
     function CalculateScore() {
         // let sum = dice1 + dice2 + dice3 + dice4 + dice5
@@ -131,23 +82,18 @@ const Yatzy = () => {
 
     return (
         <div className="dices">
-            <button className="square" onClick={() => setdice1(6)}> {dice1} </button>
-            <button className="square" onClick={() => setdice2(1)}> {dice2} </button>
-            <button className="square" onClick={() => setdice3(3)}> {dice3} </button>
-            <button className="square" onClick={() => setdice4(3)}> {dice4} </button>
-            <button className="square" onClick={() => setdice5(2)}> {dice5} </button>
+            <button className="square" onClick={() => setdice1(5)}> {dice1} </button>
+            <button className="square" onClick={() => setdice2(5)}> {dice2} </button>
+            <button className="square" onClick={() => setdice3(5)}> {dice3} </button>
+            <button className="square" onClick={() => setdice4(5)}> {dice4} </button>
+            <button className="square" onClick={() => setdice5(5)}> {dice5} </button>
 
 
             <div className="buttons-calc">
-                <button onClick={CalculateScore}>Räkna!</button>
+                <button onClick={CalculateScore}>Räkna summa!</button>
                 <button onClick={CalculateYatzy}>Är det yatzy? </button>
 
-                <button onClick={CalculateOnes}>räkna ettor</button>
-                <button onClick={CalculateTwos}>räkna tvåor</button>
-                <button onClick={CalculateThrees}>räkna treor</button>
-                <button onClick={CalculateFours}>räkna fyror</button>
-                <button onClick={CalculateFives}>räkna femmor</button>
-                <button onClick={CalculateSixes}>räkna sexor</button>
+                <button onClick={CalculateGeneral}> räkna alla av varje sort</button>
             </div>
 
             <div className="div-calc-output">
