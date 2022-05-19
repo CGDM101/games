@@ -15,8 +15,11 @@ header a.active {
 
 .dices {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+}
+/*mellanrum mellan tärningarna*/
+.dices button {
+  margin: 0.5em;
 }
 
 ol, ul {
@@ -76,8 +79,22 @@ button {
   border: 2px solid #47d962;
   color: #47d962;
   font-family: monospace; 
+  /* margin: 0.5em; */
+}
+/*för att flexa alla buttons som beräknar*/
+div .buttons-calc {
+  display: flex;
+  flex-direction: column; 
+}
+div .buttons-calc button {
+  margin: 0.5em; /*mellanrum knappar*/
+  /* padding: 0.5em; text till border*/
 }
 
+/*diven för calc-output*/
+.div-calc-output {
+  margin: 0.5em;
+}
 
 /* .App {
   text-align: center;

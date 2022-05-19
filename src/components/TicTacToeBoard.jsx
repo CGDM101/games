@@ -17,6 +17,9 @@ const TicTacToeBoard = () => {
     // function render() {
     //     const playerstatus = 'Next player: X'
     // }har i st usestate?
+    function decideNextPlayer() {
+        let sth = {squares: Array(9).fill(null)} // ?
+    }
 
     return (
         <section>
