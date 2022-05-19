@@ -10,6 +10,7 @@ const Yatzy = () => {
 
     const [sum, setSum] = useState(0)
     const [yatzy, setYatzy] = useState('-') // false
+    const [fyrtal, setFyrtal] = useState('-') // false
     
     const [ones, setOnes] = useState(0)
     const [twos, setTwos] = useState(0)
@@ -63,6 +64,15 @@ const Yatzy = () => {
         setSixes(sumSixes)
     }
 
+    function CalculateFyrtal() {
+        let dices = [dice1, dice2, dice3, dice4, dice5]
+        let fyrtal = ''
+        if ((dice1 == dice2 && dice2 == dice3 && dice3 == dice4) || (dice2 == dice3 && dice3 == dice4 && dice4 == dice5) ) {
+            fyrtal='ja'
+        } else fyrtal = 'nej'
+        setFyrtal(fyrtal)        
+    }
+ 
     function CalculateScore() {
         // let sum = dice1 + dice2 + dice3 + dice4 + dice5
         setSum(dice1 + dice2 + dice3 + dice4 + dice5)
@@ -82,7 +92,7 @@ const Yatzy = () => {
 
     return (
         <div className="dices">
-            <button className="square" onClick={() => setdice1(5)}> {dice1} </button>
+            <button className="square" onClick={() => setdice1(1)}> {dice1} </button>
             <button className="square" onClick={() => setdice2(5)}> {dice2} </button>
             <button className="square" onClick={() => setdice3(5)}> {dice3} </button>
             <button className="square" onClick={() => setdice4(5)}> {dice4} </button>
@@ -94,6 +104,9 @@ const Yatzy = () => {
                 <button onClick={CalculateYatzy}>Är det yatzy? </button>
 
                 <button onClick={CalculateGeneral}> räkna alla av varje sort</button>
+
+                <button onClick={CalculateFyrtal}> fyrtal?</button>
+
             </div>
 
             <div className="div-calc-output">
@@ -111,7 +124,7 @@ const Yatzy = () => {
             <p>Är det stege? (todo)</p>
             <p>Är det par? (todo)</p>
             <p>Är det triss? (todo)</p>
-            <p>Är det fyrtal? (todo)</p>
+            <p>Är det fyrtal? {fyrtal}</p>
             <p>Är det två par? (todo)</p>
         </div>
     )
