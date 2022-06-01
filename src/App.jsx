@@ -12,7 +12,7 @@ function App() {
       <Router>
           <div>
               <header>
-                <NavLink to=""> Startsida </NavLink>
+                <NavLink to=""> Start </NavLink>
                 <NavLink to="/game"> Luffarschack </NavLink>
                 <NavLink to="/battleship"> Sänka skepp </NavLink>
                 <NavLink to="/yatzy"> Yatzy </NavLink>

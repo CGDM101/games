@@ -9,7 +9,7 @@ const Game = () => {
             </div>
             <div className="game-info">
                 <div> status </div>
-                <ol> tdod </ol>
+                <ol> todo </ol>
             </div>
         </div>
     )
