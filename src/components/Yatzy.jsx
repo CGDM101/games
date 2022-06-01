@@ -1,5 +1,4 @@
 import { useState } from "react"
-import Square from "./Square"
 
 const Yatzy = () => {
     const [dice1, setdice1] = useState('?')
@@ -25,6 +24,25 @@ const Yatzy = () => {
     const [fives, setFives] = useState(0)
     const [sixes, setSixes] = useState(0)
     
+    function Randomise(min, max) {
+        let numbers = []
+        min = 1
+        max = 5
+        let num1 =  Math.floor(Math.random() * (max - min + 1)) + min
+        let num2 =  Math.floor(Math.random() * (max - min + 1)) + min
+        let num3 =  Math.floor(Math.random() * (max - min + 1)) + min
+        let num4 =  Math.floor(Math.random() * (max - min + 1)) + min
+        let num5 =  Math.floor(Math.random() * (max - min + 1)) + min
+        console.log(num1,num2,num3,num4,num5)
+        numbers[0] = num1
+        numbers[1] = num2
+        numbers[2] = num3
+        numbers[3] = num4
+        numbers[4] = num5
+        console.log(numbers)
+
+    }
+
     function CalculateGeneral() {
         let dices = [dice1, dice2, dice3, dice4, dice5]
         
@@ -79,17 +97,17 @@ const Yatzy = () => {
         setFyrtal(fyrtal)        
     }
 
-    function CalculateKak() {
-        let isTriss = CalculateTriss()
-        let isPar = CalculatePar()
-        console.log('result',isTriss)
-        console.log('res',isPar)
-        let kak = ''
-        if (isTriss == true && isPar == true) {
-            kak = 'ja'
-        } else kak = 'nej'
-        setKak(kak)
-    }
+    // function CalculateKak() {
+    //     let isTriss = CalculateTriss()
+    //     let isPar = CalculatePar()
+    //     console.log('result',isTriss)
+    //     console.log('res',isPar)
+    //     let kak = ''
+    //     if (isTriss == true && isPar == true) {
+    //         kak = 'ja'
+    //     } else kak = 'nej'
+    //     setKak(kak)
+    // }
 
     function CalculateStege() {
         let dices = [dice1, dice2, dice3, dice4, dice5]
@@ -101,68 +119,63 @@ const Yatzy = () => {
         setStege(stege)
     }
 
-    // todo OM fyrtal ELLER triss, räkna inte ut par, för då blir det true!!
     function CalculatePar() {
         let par = ''
         if (   (dice1 == dice2)   ||     (dice2 == dice3)     ||    (dice3 == dice4)     ||   (dice4 == dice5)   ||    (dice5 == dice1)    ) {
             par = 'ja'
-            return true
+            // return true
         } else par = 'nej'
         setPar(par)
-        return false
+        // return false
     }
 
-    // todo OM fyrtal, räkna inte ut triss, för då blir det true!!
     function CalculateTriss() {
         let triss = ''
         if (    (dice1 == dice2 && dice2 == dice3)   ||  (dice2 == dice3 && dice3 == dice4)    ||   (dice3 == dice4 && dice4 == dice5)   ||   (dice4 == dice5 && dice5 == dice1)     ) {
             triss = 'ja'
-            return true
+            // return true
         } else triss = 'nej'
         setTriss(triss)
-        return false
+        // return false
     }
 
-    function CalculateTvaPar() {
-        // todo
-    }
+    function CalculateTvaPar() { }
 
     function CalculateScore() {
-        // let sum = dice1 + dice2 + dice3 + dice4 + dice5
         setSum(dice1 + dice2 + dice3 + dice4 + dice5)
     }
 
     function CalculateYatzy() {
         if (dice1 == dice2 && dice2 == dice3 && dice3 == dice4 && dice4 == dice5) {
-            setYatzy('ja') // true
+            setYatzy('ja')
             let yatzy = true
-            console.log('true?:', yatzy)
         }
         else if (dice1 != dice2) {
-            setYatzy('nej') //true
-            console.log('false?:', yatzy)
+            setYatzy('nej')
+            let yatzy = false
         }
     }
 
     return (
         <div className="dices">
-            <button className="square" onClick={() => setdice1(1)}> {dice1} </button> {/*obs hårdkodat!*/}
+            <button className="square" onClick={() => setdice1(4)}> {dice1} </button> {/*obs hårdkodat!*/}
             <button className="square" onClick={() => setdice2(1)}> {dice2} </button>
             <button className="square" onClick={() => setdice3(1)}> {dice3} </button>
-            <button className="square" onClick={() => setdice4(5)}> {dice4} </button>
-            <button className="square" onClick={() => setdice5(5)}> {dice5} </button>
+            <button className="square" onClick={() => setdice4(1)}> {dice4} </button>
+            <button className="square" onClick={() => setdice5(4)}> {dice5} </button>
 
             <div className="buttons-calc">
                 <button onClick={CalculateScore}>Räkna summa!</button>
                 <button onClick={CalculateYatzy}>Är det yatzy? </button>
                 <button onClick={CalculateGeneral}> räkna alla av varje sort</button>
                 <button onClick={CalculateFyrtal}> fyrtal?</button>
-                <button onClick={CalculateKak}> Kåk?</button>
+                {/* <button onClick={CalculateKak}> Kåk?</button> */}
                 <button onClick={CalculateStege}> Stege?</button>
                 <button onClick={CalculatePar}> Par?</button>
                 <button onClick={CalculateTriss}> Triss</button>
 
                 <button onClick={CalculateTvaPar}> Två par?</button>
+                <button onClick={Randomise}> test random?</button>
 
             </div>
 
@@ -178,11 +191,11 @@ const Yatzy = () => {
             </div>
 
             <p>Är det fyrtal? {fyrtal}</p>        
-            <p>Är det kåk? {kak}</p>
+            {/* <p>Är det kåk? {kak}</p> */}
             <p>Är det stege? {stege}</p>
             <p>Är det par? {par}</p>
             <p>Är det triss? {triss}</p>
-            
+
             <p>Är det två par? (todo)</p>
 
         </div>
