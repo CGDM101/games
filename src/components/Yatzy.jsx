@@ -10,7 +10,6 @@ const Yatzy = () => {
     const [sum, setSum] = useState(0)
     const [yatzy, setYatzy] = useState('-')
     const [fyrtal, setFyrtal] = useState('-')
-
     const [kak, setKak] = useState('-')
     const [stege, setStege] = useState('-')
     const [par, setPar] = useState('-')
@@ -158,11 +157,11 @@ const Yatzy = () => {
 
     return (
         <div className="dices">
-            <button className="square" onClick={() => setdice1(4)}> {dice1} </button> {/*obs hårdkodat!*/}
-            <button className="square" onClick={() => setdice2(1)}> {dice2} </button>
-            <button className="square" onClick={() => setdice3(1)}> {dice3} </button>
-            <button className="square" onClick={() => setdice4(1)}> {dice4} </button>
-            <button className="square" onClick={() => setdice5(4)}> {dice5} </button>
+            <button className="square" onClick={() => setdice1(  Math.floor(Math.random() * (5 - 1 + 1)) + 1  )}> {dice1} </button> {/*obs hårdkodat!*/}
+            <button className="square" onClick={() => setdice2(   Math.floor(Math.random() * (5 - 1 + 1)) + 1   )}> {dice2} </button>
+            <button className="square" onClick={() => setdice3(    Math.floor(Math.random() * (5 - 1 + 1)) + 1     )}> {dice3} </button>
+            <button className="square" onClick={() => setdice4(   Math.floor(Math.random() * (5 - 1 + 1)) + 1    )}> {dice4} </button>
+            <button className="square" onClick={() => setdice5(   Math.floor(Math.random() * (5 - 1 + 1)) + 1     )}> {dice5} </button>
 
             <div className="buttons-calc">
                 <button onClick={CalculateScore}>Räkna summa!</button>
@@ -173,9 +172,9 @@ const Yatzy = () => {
                 <button onClick={CalculateStege}> Stege?</button>
                 <button onClick={CalculatePar}> Par?</button>
                 <button onClick={CalculateTriss}> Triss</button>
-
-                <button onClick={CalculateTvaPar}> Två par?</button>
-                <button onClick={Randomise}> test random?</button>
+                
+                {/* <button onClick={CalculateTvaPar}> Två par?</button> */}
+                {/* <button onClick={Randomise}> test random()</button> */}
 
             </div>
 
@@ -196,7 +195,7 @@ const Yatzy = () => {
             <p>Är det par? {par}</p>
             <p>Är det triss? {triss}</p>
 
-            <p>Är det två par? (todo)</p>
+            {/* <p>Är det två par? (todo)</p> */}
 
         </div>
     )
